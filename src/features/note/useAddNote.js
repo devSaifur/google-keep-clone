@@ -1,15 +1,18 @@
-import { useMutation } from '@tanstack/react-query'
-import { addDoc } from 'firebase/firestore'
-import { collection } from 'firebase/firestore'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 
 function useAddNote() {
+  const queryClient = useQueryClient()
   const { mutate: addNote, isLoading: isLoadingAddNote } = useMutation({
-    mutationKey: ['addNote'],
     mutationFn: async (newNote) => {
       await addDoc(collection(db, 'notes'), newNote)
     },
-    onSuccess: (err) => {
+    onSuccess: () => {
+      console.log('Note added successfully')
+      queryClient.invalidateQueries(['notes'])
+    },
+    onError: (err) => {
       console.error(err.message)
     },
   })
