@@ -1,19 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect } from "react"
 
-function useOutsideClick(formRef, submitCallback) {
+function useOutsideClick(ref, submitCallback, listenCapturing = true) {
   useEffect(() => {
     function handleClick(e) {
-      if (formRef.current && !formRef.current.contains(e.target)) {
+      if (ref.current && !ref.current.contains(e.target)) {
         submitCallback()
       }
     }
 
-    document.addEventListener('click', handleClick)
+    document.addEventListener("click", handleClick, listenCapturing)
 
     return () => {
-      document.removeEventListener('click', handleClick)
+      document.removeEventListener("click", handleClick, listenCapturing)
     }
-  }, [formRef, submitCallback])
+  }, [ref, submitCallback, listenCapturing])
 }
 
 export { useOutsideClick }
