@@ -1,7 +1,7 @@
-import { useState, useRef } from "react"
-import { clsx } from "clsx"
-import { useOutsideClick } from "../hooks/useOutsideClick"
-import { useEditNote } from "../features/note/useEditNote"
+import { useState, useRef } from 'react'
+import { clsx } from 'clsx'
+import { useEditNote } from '../../features/useEditNote'
+import { useOutsideClick } from '../../hooks/useOutsideClick'
 
 function EditNote({ title, note, id, isEditing, setIsEditing }) {
   const [newTitle, setNewTitle] = useState(title)
@@ -17,8 +17,8 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
       {
         onSettled: () => {
           setIsEditing(false)
-          setNewTitle("")
-          setNewNote("")
+          setNewTitle('')
+          setNewNote('')
         },
       }
     )
@@ -29,7 +29,7 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
       <div
         //overlay
         className={clsx({
-          "fixed inset-0 z-10 h-screen w-full opacity-50 blur-md backdrop-blur-md":
+          'fixed inset-0 z-10 h-screen w-full opacity-50 blur-md backdrop-blur-md':
             isEditing,
         })}
       ></div>
@@ -37,7 +37,7 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
       <div
         className={clsx(
           {
-            "h-16 visible fixed -top-32 left-0 z-20 flex h-screen w-screen items-center justify-center":
+            'h-16 visible fixed -top-32 left-0 z-20 flex h-screen w-screen items-center justify-center':
               isEditing,
           },
           { invisible: !isEditing }

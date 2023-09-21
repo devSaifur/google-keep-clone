@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
-import { useAddNote } from '../features/note/useAddNote'
-import { useOutsideClick } from '../hooks/useOutsideClick'
+import { useAddNote } from '../../features/useAddNote'
+import { useOutsideClick } from '../../hooks/useOutsideClick'
 
 function AddNote() {
   const [title, setTitle] = useState('')
@@ -25,7 +25,10 @@ function AddNote() {
   }
 
   return (
-    <form ref={formRef} className="flex max-h-28 flex-col">
+    <form
+      ref={formRef}
+      className="mx-auto flex max-w-xl flex-col rounded-xl border-2 border-gray-500"
+    >
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}

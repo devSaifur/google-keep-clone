@@ -1,12 +1,15 @@
-import { RotateCw, Rows, Moon, LogOut } from 'lucide-react'
+import {
+  HiOutlineArrowLeftOnRectangle,
+  HiOutlineArrowPathRoundedSquare,
+  HiOutlineMoon,
+} from 'react-icons/hi2'
 
 function Options() {
   return (
     <div className="ml-auto flex items-center justify-between gap-4 px-10">
-      <RotateCw color="#fff" />
-      <Rows color="#fff" />
-      <Moon color="#fff" />
-      <LogOut color="#fff" />
+      <HiOutlineArrowPathRoundedSquare />
+      <HiOutlineMoon />
+      <HiOutlineArrowLeftOnRectangle />
     </div>
   )
 }

@@ -1,5 +1,7 @@
 function Main({ children }) {
-  return <main className="flex w-full flex-col">{children}</main>
+  return (
+    <div className="mx-auto flex w-11/12 flex-col flex-wrap">{children}</div>
+  )
 }
 
 export default Main

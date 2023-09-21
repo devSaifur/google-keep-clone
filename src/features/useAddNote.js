@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../services/firebase'
+import { db } from '../services/firebase'
 
 function useAddNote() {
   const queryClient = useQueryClient()

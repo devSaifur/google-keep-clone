@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../services/firebase'
+import { db } from '../services/firebase'
 
 function useGetNotes() {
   const {
