@@ -12,16 +12,21 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
   useOutsideClick(newNoteRef, handleSubmit)
 
   function handleSubmit() {
-    editNote(
-      { id, editedNote: { title: newTitle, note: newNote } },
-      {
-        onSettled: () => {
-          setIsEditing(false)
-          setNewTitle('')
-          setNewNote('')
-        },
-      }
-    )
+    setIsEditing(false)
+
+    if (!newTitle || !newNote || (newNote === note && newTitle === title)) {
+      return
+    } else {
+      editNote(
+        { id, editedNote: { title: newTitle, note: newNote } },
+        {
+          onSettled: () => {
+            setNewTitle('')
+            setNewNote('')
+          },
+        }
+      )
+    }
   }
 
   return (
@@ -45,11 +50,11 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
       >
         <div
           ref={newNoteRef}
-          className="flex min-w-[37rem] flex-col gap-2 rounded-lg border-2 border-gray-500 bg-gray-700 shadow-2xl"
+          className="flex min-w-[37rem] flex-col gap-2 rounded-xl border-2 border-gray-500 bg-gray-700 p-4 shadow-2xl"
         >
           <input
             onChange={(e) => setNewTitle(e.target.value)}
-            className="rounded-t-lg bg-gray-700 p-2"
+            className="rounded-t-lg bg-gray-700 p-2 text-xl font-bold"
             type="text"
             placeholder="Title"
             value={newTitle}

@@ -4,20 +4,28 @@ import { HiOutlineTrash } from 'react-icons/hi2'
 import { useDeleteNote } from '../../features/useDeleteNote'
 
 function Note({ title, note, id }) {
-  const [isEditing, setIsEditing] = useState(false)
   const { deleteNote } = useDeleteNote()
+  const [isEditing, setIsEditing] = useState(false)
+
+  function handleDelete(e) {
+    e.stopPropagation()
+    deleteNote(id)
+  }
 
   if (!isEditing) {
     return (
       <>
-        <div className="m-2 flex w-64 cursor-pointer flex-col gap-2 rounded-xl border-2 border-gray-500 p-2">
-          <div onClick={() => setIsEditing((isEditing) => !isEditing)}>
+        <div
+          onClick={() => setIsEditing((isEditing) => !isEditing)}
+          className="group/deleteBtn m-2 flex w-64 cursor-pointer flex-col gap-2 rounded-xl border-2 border-gray-500 p-2 transition-all hover:shadow-2xl"
+        >
+          <div>
             <h2 className="text-lg font-semibold">{title}</h2>
             <p>{note}</p>
           </div>
-          <div className="ml-auto mr-2 flex items-center gap-2">
+          <div className="invisible ml-auto mr-2 flex items-center gap-2 transition-all group-hover/deleteBtn:visible">
             <HiOutlineTrash
-              onClick={() => deleteNote(id)}
+              onClick={handleDelete}
               size="24"
               className="cursor-pointer"
             />
