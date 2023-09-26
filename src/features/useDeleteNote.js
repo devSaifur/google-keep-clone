@@ -5,12 +5,11 @@ import { db } from '../services/firebase'
 function useDeleteNote() {
   const queryClient = useQueryClient()
 
-  const { mutate: deleteNote, isLoading: isDeletingNote } = useMutation({
+  const { isLoading: isDeletingNote, mutate: deleteNote } = useMutation({
     mutationFn: async (id) => {
       await deleteDoc(doc(db, 'notes', id))
     },
     onSuccess: () => {
-      console.log('Note deleted successfully')
       queryClient.invalidateQueries(['notes'])
     },
     onError: (err) => {

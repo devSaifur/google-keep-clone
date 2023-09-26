@@ -1,3 +1,5 @@
+import Title from './Title'
+
 function Logo() {
   return (
     <div className="flex items-center gap-2 pr-16">
@@ -6,7 +8,7 @@ function Logo() {
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 370.86 509.93"
-        className="h-8 w-8"
+        className="h-10 w-10"
       >
         <defs>
           <style>
@@ -25,7 +27,8 @@ function Logo() {
           d="M185.43,173.84a75.31,75.31,0,0,0-40.1,139.07h80a75.31,75.31,0,0,0-40.1-139.07Z"
         />
       </svg>
-      <h1>Keep</h1>
+
+      <Title />
     </div>
   )
 }

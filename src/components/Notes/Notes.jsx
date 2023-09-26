@@ -5,7 +5,7 @@ function Notes() {
   const { notes } = useGetNotes()
 
   return (
-    <div className="flex flex-wrap px-10 py-8">
+    <div className="columns-6">
       {notes?.map((note) => (
         <Note title={note.title} note={note.note} id={note.id} key={note.id} />
       ))}

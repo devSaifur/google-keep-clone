@@ -9,7 +9,6 @@ function useAddNote() {
       await addDoc(collection(db, 'notes'), newNote)
     },
     onSuccess: () => {
-      console.log('Note added successfully')
       queryClient.invalidateQueries(['notes'])
     },
     onError: (err) => {

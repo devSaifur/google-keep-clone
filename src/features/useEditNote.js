@@ -4,10 +4,9 @@ import { db } from '../services/firebase'
 
 function useEditNote() {
   const queryClient = useQueryClient()
-  const { mutate: editNote, isLoading: isEditingNote } = useMutation({
+  const { isLoading: isEditingNote, mutate: editNote } = useMutation({
     mutationFn: ({ id, editedNote }) => tryEditNote(id, editedNote),
     onSuccess: () => {
-      console.log('Note edited successfully')
       queryClient.invalidateQueries(['notes'])
     },
     onError: (err) => {

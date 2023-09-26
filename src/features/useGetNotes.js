@@ -5,8 +5,8 @@ import { db } from '../services/firebase'
 function useGetNotes() {
   const {
     isLoading: isLoadingNotes,
-    error,
     data: notes,
+    isFetching,
   } = useQuery({
     queryKey: ['notes'],
     queryFn: async () => {
@@ -19,7 +19,7 @@ function useGetNotes() {
     },
   })
 
-  return { isLoadingNotes, error, notes }
+  return { isLoadingNotes, notes, isFetching }
 }
 
 export { useGetNotes }

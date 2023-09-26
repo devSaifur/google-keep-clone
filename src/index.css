@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+#spinner-mini {
+  width: 2.4rem;
+  height: 2.4rem;
+  animation: rotate 1.5s infinite linear;
+}
