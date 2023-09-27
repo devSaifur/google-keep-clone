@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { deleteDoc, doc } from 'firebase/firestore'
-import { db } from '../services/firebase'
+import { db } from '../../services/firebase'
 
 function useDeleteNote() {
   const queryClient = useQueryClient()
@@ -14,7 +14,7 @@ function useDeleteNote() {
     },
     onError: (err) => {
       console.error(err.message)
-    },
+    }
   })
 
   return { deleteNote, isDeletingNote }

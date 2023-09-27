@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { doc, updateDoc } from 'firebase/firestore'
-import { db } from '../services/firebase'
+import { db } from '../../services/firebase'
 
 function useEditNote() {
   const queryClient = useQueryClient()
@@ -11,7 +11,7 @@ function useEditNote() {
     },
     onError: (err) => {
       console.error(err.message)
-    },
+    }
   })
 
   return { editNote, isEditingNote }

@@ -1,5 +1,5 @@
-import AddNote from '../components/Notes/AddNote'
-import Notes from '../components/Notes/Notes'
+import AddNote from '../features/Note/components/AddNote'
+import Notes from '../features/Note/components/Notes'
 
 function Home() {
   return (

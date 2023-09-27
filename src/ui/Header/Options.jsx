@@ -1,6 +1,5 @@
 import { HiOutlineArrowPathRoundedSquare, HiOutlineMoon } from 'react-icons/hi2'
-
-import { useGetNotes } from '../../features/useGetNotes'
+import { useGetNotes } from '../../features/Note/useGetNotes'
 import SpinnerMini from '../SpinnerMini'
 
 function Options() {
