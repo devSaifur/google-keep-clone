@@ -21,7 +21,7 @@ function Note({ title, note, id }) {
     <>
       <div
         onClick={handleEdit}
-        className="group/noteOptions m-2 inline-block w-full cursor-pointer gap-2 rounded-xl border-2 border-gray-500 p-2 hover:shadow-2xl"
+        className="group/noteOptions m-2 inline-block w-full max-w-[22rem] cursor-pointer gap-2 rounded-xl border border-gray-600 p-2 hover:shadow-primary dark:border-gray-500"
       >
         <div>
           <h2 className="text-lg font-semibold">{title}</h2>

@@ -2,30 +2,16 @@ import Title from './Title'
 
 function Logo() {
   return (
-    <div className="flex items-center gap-2 pr-16">
+    <div className="flex items-center gap-2 lg:pr-16">
       <svg
-        id="Layer_1"
-        data-name="Layer 1"
+        className="h-12 w-12"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 370.86 509.93"
-        className="h-10 w-10"
       >
-        <defs>
-          <style>
-            {`.cls-1{fill:#ffba00;}.cls-2{fill:#ff9500;}.cls-3{fill:#fff;}`}
-          </style>
-        </defs>
-        <title>google-keep</title>
         <path
-          className="cls-1"
-          d="M336.09,509.93H34.77A34.72,34.72,0,0,1,0,475.16V34.77A34.72,34.72,0,0,1,34.77,0H243.38L370.86,127.48V475.16A34.72,34.72,0,0,1,336.09,509.93Z"
-        />
-        <path className="cls-2" d="M243.38,0,370.86,127.48H243.38Z" />
-        <path className="cls-3" d="M226,341.88H144.87v29H226Z" />
-        <path
-          className="cls-3"
-          d="M185.43,173.84a75.31,75.31,0,0,0-40.1,139.07h80a75.31,75.31,0,0,0-40.1-139.07Z"
-        />
+          fill="#eab308"
+          d="M4 2h16a2 2 0 0 1 2 2v13.33L17.33 22H4a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2m13 15v3.25L20.25 17H17m-7 2h4v-1h1v-5a5.002 5.002 0 0 0-3-9a5.002 5.002 0 0 0-3 9v5h1v1m4-2h-4v-2h4v2M12 5c2.21 0 4 1.79 4 4c0 1.5-.8 2.77-2 3.46V14h-4v-1.54C8.8 11.77 8 10.5 8 9c0-2.21 1.79-4 4-4Z"
+        ></path>
       </svg>
 
       <Title />
