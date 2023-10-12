@@ -31,7 +31,7 @@ function AddNote() {
   return (
     <form
       ref={formRef}
-      className="mx-auto mb-6 flex h-auto min-w-[22rem] flex-col gap-2 rounded-xl border border-gray-800 px-4 py-3 shadow-lg dark:border-gray-500 sm:min-w-[36rem] lg:min-w-[40rem]"
+      className="mx-auto mb-6 flex h-auto min-w-[22rem] flex-col gap-2 rounded-xl border border-neutral-800 px-4 py-3 shadow-lg dark:border-neutral-500 sm:min-w-[36rem] lg:min-w-[40rem]"
     >
       {isAdding && (
         <input
@@ -39,7 +39,7 @@ function AddNote() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
           type="text"
-          className="bg-gray-300 outline-none placeholder:font-semibold placeholder:text-gray-600 dark:bg-gray-700 dark:placeholder:text-gray-400"
+          className="bg-neutral-300 outline-none placeholder:font-semibold placeholder:text-neutral-600 dark:bg-neutral-800 dark:placeholder:text-neutral-400"
         />
       )}
       <TextareaAutosize
@@ -48,7 +48,7 @@ function AddNote() {
         value={note}
         placeholder="Take a note..."
         type="text"
-        className="bg-gray-300 font-medium outline-none placeholder:font-medium placeholder:text-gray-600 dark:bg-gray-700 dark:placeholder:text-gray-400"
+        className="bg-neutral-300 font-medium outline-none placeholder:font-medium placeholder:text-neutral-600 dark:bg-neutral-800 dark:placeholder:text-neutral-400"
       />
       {isAdding && (
         <button
@@ -57,7 +57,7 @@ function AddNote() {
             handleSubmit()
           }}
           type="button"
-          className="ml-auto mr-2 inline-block rounded bg-gray-300 px-6 pb-2 pt-2 text-sm font-semibold tracking-widest transition-all hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-800"
+          className="ml-auto mr-2 inline-block rounded bg-neutral-300 px-6 pb-2 pt-2 text-sm font-semibold tracking-widest transition-all hover:bg-neutral-400 dark:bg-neutral-600 dark:hover:bg-neutral-700"
         >
           Done
         </button>

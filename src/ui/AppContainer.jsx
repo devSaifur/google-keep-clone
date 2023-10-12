@@ -1,6 +1,6 @@
 function AppContainer({ children }) {
   return (
-    <div className="h-screen overflow-y-auto bg-gray-300 text-gray-900 dark:bg-gray-700 dark:text-gray-200">
+    <div className="h-screen overflow-y-auto bg-neutral-300 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200">
       {children}
     </div>
   )
