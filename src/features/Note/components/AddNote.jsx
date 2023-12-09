@@ -14,8 +14,11 @@ function AddNote() {
     setIsAdding(false)
     if (!note) return
 
+    const currentDateTime = new Date()
+    const isoDateTimeString = currentDateTime.toISOString()
+
     addNote(
-      { title, note },
+      { title, note, created: isoDateTimeString },
       {
         onSuccess: () => {
           setTitle('')
