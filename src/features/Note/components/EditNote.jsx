@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
+
 import { useEditNote } from '../useEditNote'
 import { useOutsideClick } from '../../../hooks/useOutsideClick'
 import Overlay from '../../../ui/Overlay'
@@ -34,7 +35,7 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
         <div className="fixed -top-32 left-0 z-20 flex h-screen w-screen items-center justify-center">
           <form
             ref={newNoteRef}
-            className="flex min-w-[22.5rem] flex-col gap-2 rounded-xl border border-neutral-800 bg-neutral-300 p-4 shadow-secondary dark:border-neutral-500 dark:bg-neutral-800 sm:min-w-[32rem] lg:min-w-[38rem]"
+            className="flex min-w-[22.5rem] flex-col gap-2 rounded-xl border border-neutral-800 bg-neutral-300 p-4 shadow-secondary sm:min-w-[32rem] lg:min-w-[38rem] dark:border-neutral-500 dark:bg-neutral-800"
           >
             <input
               onChange={(e) => setNewTitle(e.target.value)}
@@ -45,10 +46,10 @@ function EditNote({ title, note, id, isEditing, setIsEditing }) {
             />
             <TextareaAutosize
               onChange={(e) => setNewNote(e.target.value)}
-              className="whitespace-nowrap rounded-b-lg bg-gray-300 p-2 outline-none dark:bg-neutral-800"
-              cols="30"
-              rows="10"
+              className="rounded-b-lg bg-gray-300 p-2 outline-none dark:bg-neutral-800"
+              maxRows={20}
               value={newNote}
+              type="text"
             />
 
             <button

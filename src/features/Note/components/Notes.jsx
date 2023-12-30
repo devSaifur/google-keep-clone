@@ -1,11 +1,13 @@
+import moment from 'moment'
+
 import { useGetNotes } from '../useGetNotes'
 import Note from './Note'
 
 function Notes() {
   const { notes } = useGetNotes()
 
-  const sortedNotes = notes?.sort(
-    (a, b) => new Date(b.created) - new Date(a.created)
+  const sortedNotes = notes?.sort((a, b) =>
+    moment(b.created).diff(moment(a.created))
   )
 
   return (

@@ -34,7 +34,7 @@ function AddNote() {
   return (
     <form
       ref={formRef}
-      className="mx-auto mb-6 flex h-auto min-w-[22rem] flex-col gap-2 rounded-xl border border-neutral-800 px-4 py-3 shadow-lg dark:border-neutral-500 sm:min-w-[36rem] lg:min-w-[40rem]"
+      className="mx-auto mb-6 flex h-auto min-w-[22rem] flex-col gap-2 rounded-xl border border-neutral-800 px-4 py-3 shadow-lg sm:min-w-[36rem] lg:min-w-[40rem] dark:border-neutral-500"
     >
       {isAdding && (
         <input
@@ -51,6 +51,7 @@ function AddNote() {
         value={note}
         placeholder="Take a note..."
         type="text"
+        maxRows={20}
         className="bg-neutral-300 font-medium outline-none placeholder:font-medium placeholder:text-neutral-600 dark:bg-neutral-800 dark:placeholder:text-neutral-400"
       />
       {isAdding && (

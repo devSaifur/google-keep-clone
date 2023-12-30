@@ -1,4 +1,4 @@
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import AppContainer from './ui/AppContainer'
 
 const Header = lazy(() => import('./ui/Header/Header'))
@@ -10,14 +10,16 @@ const MadeWith = lazy(() => import('./ui/MadeWith'))
 function App() {
   return (
     <AppContainer>
-      <Header />
+      <Suspense>
+        <Header />
 
-      <Main>
-        <AddNote />
-        <Notes />
-      </Main>
+        <Main>
+          <AddNote />
+          <Notes />
+        </Main>
 
-      <MadeWith />
+        <MadeWith />
+      </Suspense>
     </AppContainer>
   )
 }
