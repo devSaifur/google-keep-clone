@@ -10,11 +10,7 @@ sorry if I blasted your eyes :)
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Contributing](#contributing)
-- [License](#license)
-
+  
 ## Overview
 
 This project is a Google Keep clone designed to help users take and organize their notes efficiently. It leverages the power of React for the frontend, Tailwind CSS for styling, and Firebase for backend functionalities like real-time data synchronization.
